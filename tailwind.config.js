@@ -8,7 +8,7 @@ module.exports = {
   ],
   theme: {
     colors: {
-      "primary-normal": "#153445",
+      "primary-normal": "#9885b7",
       "primary-light": "#3A7391",
       "secondary-normal": "#91580F",
       "secondary-light": "#CC9454",
@@ -55,8 +55,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       boxShadow: {
         md: "0px 4px 4px rgba(0, 0, 0, 0.1)",
