@@ -27,6 +27,7 @@ module.exports = {
       placeholder: "#C1C1C1",
       white: "#FFFFFF",
       black: "#242424",
+      transparent: "transparent",
     },
     fontSize: {
       tiny: "0.625rem",
@@ -56,12 +57,23 @@ module.exports = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "title-First": "linear-gradient(-154deg, #9759bb 20%, #fca6c6 60%, #f6af97 80%);",
+        "title-Second": "linear-gradient(-155deg, #f6af97 25%, #fca6c6 51%, #9759bb 70%);",
       },
       boxShadow: {
         md: "0px 4px 4px rgba(0, 0, 0, 0.1)",
       },
       width: {
         header: "calc(100vw - 240px)",
+      },
+      animation: {
+        cloud: "cloud 2.5s ease-in-out infinite",
+      },
+      keyframes: {
+        cloud: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-5%)" },
+        },
       },
     },
   },
