@@ -1,16 +1,27 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import profileImage from "/public/assets/images/profileImage.jpg";
 
 const NAV_STYLE = `cursor-pointer text-[#71787d] hover:text-primary-normal hover:font-bold w-20`;
 
 function Header() {
+  const [position, setPosition] = useState(0);
+  function onScroll() {
+    setPosition(window.scrollY);
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
   const clickImageHandler = () => {
     window.open("https://github.com/lbw3973");
   };
   return (
-    <nav className="fixed w-full flex items-center h-28">
+    <nav className={`fixed w-full flex items-center h-28 ${position > 0 && "bg-white !h-20"} duration-500 z-10`}>
       <div className="flex justify-between items-center min-w-[500px] w-[1200px] mx-auto my-5 px-4">
         <Image
           src={profileImage}
