@@ -62,6 +62,7 @@ module.exports = {
       },
       boxShadow: {
         md: "0px 4px 4px rgba(0, 0, 0, 0.1)",
+        bottom: "0px 8px 13px -5px rgba(50,50,93,0.25)",
       },
       width: {
         header: "calc(100vw - 240px)",
