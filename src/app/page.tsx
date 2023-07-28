@@ -1,11 +1,13 @@
 import Profile from "./profile/page";
+import Projects from "./projects/page";
 import Title from "./title/page";
 
 export default function Home() {
   return (
-    <main className="min-w-[500px] mx-auto max-w-[1600px]">
+    <main className="min-w-[500px] mx-auto max-w-[1200px]">
       <Title />
       <Profile />
+      <Projects />
     </main>
   );
 }

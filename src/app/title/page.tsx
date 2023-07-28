@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import titleImage from "/public/assets/images/titleImage.png";
 
-const H2_STYLES = "text-[200px] text-transparent bg-clip-text leading-tight";
+const H2_STYLES = "text-[160px] text-transparent bg-clip-text leading-tight";
 
 function Title() {
   return (
@@ -12,7 +12,7 @@ function Title() {
           <hgroup className="font-mono font-bold">
             <h2 className={`bg-title-First ${H2_STYLES}`}>Design</h2>
             <h2 className={`bg-title-Second ${H2_STYLES}`}>Growth</h2>
-            <h3 className="text-3xl text-[#9d5cbb] font-[SBAggroL] ml-4">항상 배움의 자세로 성장하는 웹 개발자</h3>
+            <h3 className="text-2xl text-[#9d5cbb] font-[SBAggroL] ml-4">항상 배움의 자세로 성장하는 웹 개발자</h3>
           </hgroup>
         </div>
         <div className="min-w-[400px] w-full">
