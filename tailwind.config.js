@@ -69,11 +69,16 @@ module.exports = {
       },
       animation: {
         cloud: "cloud 2.5s ease-in-out infinite",
+        icon: "icon 0.3s ease-in-out forwards",
       },
       keyframes: {
         cloud: {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-5%)" },
+        },
+        icon: {
+          "0%": { transform: "scale(1)" },
+          "100%": { transform: "scale(1.2)" },
         },
       },
     },
