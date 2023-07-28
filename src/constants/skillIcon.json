@@ -1,0 +1,26 @@
+{
+  "HTML": {
+    "src": "/assets/images/HTML.png"
+  },
+  "CSS": {
+    "src": "/assets/images/CSS.png"
+  },
+  "SASS": {
+    "src": "/assets/images/SASS.png"
+  },
+  "TailwindCSS": {
+    "src": "/assets/images/TailwindCSS.png"
+  },
+  "JavaScript": {
+    "src": "/assets/images/JavaScript.png"
+  },
+  "TypeScript": {
+    "src": "/assets/images/TypeScript.png"
+  },
+  "React": {
+    "src": "/assets/images/React.png"
+  },
+  "NextJs": {
+    "src": "/assets/images/NextJs.png"
+  }
+}
