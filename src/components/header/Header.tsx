@@ -11,6 +11,9 @@ function Header() {
     setPosition(window.scrollY);
   }
   useEffect(() => {
+    if (window.scrollY > 0) {
+      setPosition(window.scrollY);
+    }
     window.addEventListener("scroll", onScroll);
     return () => {
       window.removeEventListener("scroll", onScroll);
