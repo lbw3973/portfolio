@@ -6,7 +6,7 @@ import profileImage from "/public/assets/images/profileImage.jpg";
 const NAV_STYLE = `cursor-pointer text-[#71787d] hover:text-primary-normal hover:font-bold w-[120px] ease-in`;
 
 function Header() {
-  const [position, setPosition] = useState(window.scrollY);
+  const [position, setPosition] = useState(0);
   function onScroll() {
     setPosition(window.scrollY);
   }
