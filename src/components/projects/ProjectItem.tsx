@@ -1,8 +1,8 @@
-import { IContentItem } from "@/interface/contentItem";
+import { IProjectItem } from "@/interface/projectItem";
 import Image from "next/image";
 import React from "react";
 
-function ContentItem({ content }: { content: IContentItem }) {
+function ContentItem({ content }: { content: IProjectItem }) {
   return (
     <div className="h-[400px] mb-20 bg-work-Content w-full border-1 border-white shadow-content rounded-md p-12 flex gap-10">
       <div className="w-[400px] h-[300px] rounded-md shadow-thumbnail border-black relative -">
