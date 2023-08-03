@@ -1,6 +1,6 @@
-import Profile from "./profile/page";
-import Projects from "./projects/page";
-import Title from "./title/page";
+import Profile from "../components/profile/page";
+import Projects from "../components/projects/page";
+import Title from "../components/title/page";
 
 export default function Home() {
   return (
