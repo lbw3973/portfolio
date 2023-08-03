@@ -11,12 +11,20 @@
     "name": "To Do List 앱",
     "language": "HTML, CSS, JS",
     "features": ["간단한 CRUD API를 사용하여 구현"],
-    "github": "https://github.com/lbw3973/movie-searching-app",
+    "github": "https://github.com/lbw3973/todolist",
     "thumbnail": "/assets/images/ToDoList.png",
     "deploy": "https://todolist-lbw3973.vercel.app/"
   },
   "2": {
     "name": "개발자들을 위한 쇼핑몰",
+    "language": "HTML, CSS, TS",
+    "features": [""],
+    "github": "https://github.com/lbw3973/market-log",
+    "thumbnail": "/assets/images/MarketLog.png",
+    "deploy": "https://market-log.vercel.app/"
+  },
+  "3": {
+    "name": "개발자들을 위한 쇼핑몰as",
     "language": "HTML, CSS, TS",
     "features": [""],
     "github": "https://github.com/lbw3973/market-log",
