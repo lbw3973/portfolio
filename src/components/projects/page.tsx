@@ -1,6 +1,6 @@
 import SubTitle from "@/components/common/SubTitle";
 import React from "react";
-import ContentItem from "./ContentItem";
+import ContentItem from "./ProjectItem";
 import projects from "@/constants/projects.json";
 
 function Projects() {
