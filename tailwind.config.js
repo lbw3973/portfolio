@@ -59,10 +59,13 @@ module.exports = {
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "title-First": "linear-gradient(-154deg, #9759bb 20%, #fca6c6 60%, #f6af97 80%);",
         "title-Second": "linear-gradient(-155deg, #f6af97 25%, #fca6c6 51%, #9759bb 70%);",
+        "work-Content": "linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1))",
       },
       boxShadow: {
         md: "0px 4px 4px rgba(0, 0, 0, 0.1)",
         bottom: "0px 8px 13px -5px rgba(50,50,93,0.25)",
+        content: "0px 6px 12px rgba(0,0,0,0.1)",
+        thumbnail: "rgba(0, 0, 0, 0.5) 0px 5px 15px",
       },
       width: {
         header: "calc(100vw - 240px)",
