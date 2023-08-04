@@ -1,7 +1,10 @@
 export interface IProjectItem {
   name: string;
-  language: string;
-  features: string[];
+  period: string;
+  workForce: string;
+  languages: string[];
+  introduction: string;
+  parts: string[];
   github: string;
   thumbnail: string;
   deploy: string;
