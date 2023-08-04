@@ -6,7 +6,7 @@ const H2_STYLES = "text-[160px] text-transparent bg-clip-text leading-tight";
 
 function Title() {
   return (
-    <section className="h-[100vh] pt-28 min-w-[1000px] px-4">
+    <section className="h-[100vh] pt-28 min-w-[1000px] px-4" id="Home">
       <div className="h-full flex items-center">
         <div className="w-full">
           <hgroup className="font-mono font-bold">

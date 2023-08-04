@@ -5,11 +5,13 @@ import projects from "@/constants/projects.json";
 
 function Projects() {
   return (
-    <section className="py-28 min-w-[1000px] px-4">
+    <section className="py-28 min-w-[1000px] px-4" id="Work">
       <SubTitle text="Works" />
-      {Object.values(projects).map(content => (
-        <ContentItem key={content.name} content={content} />
-      ))}
+      {Object.values(projects)
+        .reverse()
+        .map(content => (
+          <ContentItem key={content.name} content={content} />
+        ))}
     </section>
   );
 }
