@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { MouseEvent, useEffect, useState } from "react";
 import profileImage from "/public/assets/images/profileImage.jpg";
+import { getSectionY } from "@/hook/ScrollToSection";
 
 const NAV_STYLE = `cursor-pointer text-[#71787d] hover:text-primary-normal hover:font-bold w-[120px] ease-in`;
 
@@ -25,7 +26,8 @@ function Header() {
   };
 
   const clickNavHandler = (e: MouseEvent<HTMLUListElement>) => {
-    console.log(e.target);
+    const liEl = e.target as HTMLLIElement;
+    getSectionY(liEl.innerText);
   };
 
   return (
