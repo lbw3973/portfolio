@@ -1,34 +1,106 @@
 {
   "0": {
     "name": "영화 검색 앱",
-    "language": "HTML, CSS, JS",
-    "features": ["Flex·Grid Box를 사용하여 UI 제작", "OPEN API를 이용한 검색 데이터 출력"],
+    "period": "1일",
+    "workForce": "1인",
+    "languages": ["HTML", "CSS", "JavaScript"],
+    "introduction": "연도별 영화 검색이 가능한 영화 검색 사이트",
+    "parts": [
+      "Flex·Grid Box를 사용하여 UI 제작",
+      "OPEN API를 이용한 검색 데이터 출력",
+      "스크롤이 바닥에 닿았을 때, 다음 목록이 불러와지는 무한스크롤 기능 구현"
+    ],
     "github": "https://github.com/lbw3973/movie-searching-app",
     "thumbnail": "/assets/images/MovieSearch.png",
     "deploy": "https://movie-searching-bwlee.netlify.app/"
   },
   "1": {
     "name": "To Do List 앱",
-    "language": "HTML, CSS, JS",
-    "features": ["간단한 CRUD API를 사용하여 구현"],
+    "period": "1일",
+    "workForce": "1인",
+    "languages": ["HTML", "CSS", "JavaScript"],
+    "introduction": "일정을 등록,삭제,수정할 수 있는 ToDoList",
+    "parts": ["간단한 CRUD API를 사용하여 구현"],
     "github": "https://github.com/lbw3973/todolist",
     "thumbnail": "/assets/images/ToDoList.png",
     "deploy": "https://todolist-lbw3973.vercel.app/"
   },
   "2": {
     "name": "개발자들을 위한 쇼핑몰",
-    "language": "HTML, CSS, TS",
-    "features": [""],
+    "period": "23.2.2 ~ 23.2.25",
+    "workForce": "4인",
+    "languages": ["HTML", "CSS", "TypeScript"],
+    "introduction": "REST API를 활용한 전자기기 쇼핑 SPA",
+    "parts": [
+      "REST API를 활용한 쇼핑몰 앱",
+      "UX를 위한 Skeletion UI를 사용",
+      "로그인/로그아웃을 통한 사용자 정보 관리"
+    ],
     "github": "https://github.com/lbw3973/market-log",
     "thumbnail": "/assets/images/MarketLog.png",
     "deploy": "https://market-log.vercel.app/"
   },
   "3": {
-    "name": "개발자들을 위한 쇼핑몰as",
-    "language": "HTML, CSS, TS",
-    "features": [""],
+    "name": "미세먼지 알리미 앱",
+    "period": "23.3.27 ~ 23.3.29",
+    "workForce": "1인",
+    "languages": ["JavaScript", "React"],
+    "introduction": "지역별로 실시간 미세먼지 정보를 확인할 수 있는 앱",
+    "parts": [
+      "환경공단의 API를 활용하여 미세먼지 데이터 공급",
+      "Redux를 활용하여 데이터 상태관리",
+      "localStorage에 즐겨찾기, 내 지역 정보 저장"
+    ],
     "github": "https://github.com/lbw3973/market-log",
-    "thumbnail": "/assets/images/MarketLog.png",
+    "thumbnail": "",
     "deploy": "https://market-log.vercel.app/"
+  },
+  "4": {
+    "name": "당직/연차 관리 프로그램",
+    "period": "23.5.1 ~ 23.5.17",
+    "workForce": "FE 5인, BE 4인",
+    "languages": ["TypeScript", "React"],
+    "introduction": "사원들은 연차 혹은 당직을 신청하고 관리자는 해당 당직과 연차에 대한 승인권한을 가지도록 하는 연차/당직 관리 프로그램입니다",
+    "parts": [
+      "Main Layout을 설계 및 구현",
+      "관리자 페이지의 회원가입 승인/반려 페이지 구현",
+      "관리자 페이지의 연차 및 당직 승인/반려 페이지 구현",
+      "페이지의 통일성을 위한 레이아웃 제작"
+    ],
+    "github": "https://github.com/lbw3973/market-log",
+    "thumbnail": "/assets/images/MiniProject.png",
+    "deploy": ""
+  },
+  "5": {
+    "name": "머니브릿지 백오피스",
+    "period": "23.6.27 ~ 23.7.14",
+    "workForce": "FE 3인, BE 3인",
+    "languages": ["TypeScript", "React", "NextJs"],
+    "introduction": "머니브릿지의 관리자 페이지",
+    "parts": [
+      "Main Layout을 설계 및 구현",
+      "상담현황을 확인할 수 있는 대시보드 페이지 구현",
+      "회원가입 대기 중인 PB들을 조회 및 승인/반려 페이지 구현",
+      "지점 등록,수정,삭제를 할 수 있는 페이지 구현"
+    ],
+    "github": "https://github.com/lbw3973/market-log",
+    "thumbnail": "/assets/images/Money-Bridge.jpg",
+    "deploy": "https://admin.moneybridge.co.kr/"
+  },
+  "6": {
+    "name": "머니브릿지",
+    "period": "23.6.8 ~ 23.6.28",
+    "workForce": "FE 4인, BE 3인",
+    "languages": ["TypeScript", "React", "NextJs"],
+    "introduction": "PB와 투자자를 연결해주는 위치기반의 매칭 플랫폼",
+    "parts": [
+      "로그인 페이지 구현",
+      "일반 유저 및 PB의 회원가입 스텝 및 페이지 구현",
+      "아이디/비밀번호 찾기 페이지 구현",
+      "react-hook-form 및 yup을 활용한 유효성검사 구현"
+    ],
+    "github": "https://github.com/lbw3973/market-log",
+    "thumbnail": "/assets/images/Money-Bridge.jpg",
+    "deploy": "https://www.moneybridge.co.kr/"
   }
 }
