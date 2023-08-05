@@ -57,7 +57,7 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
     <div
       className={`h-[400px] mb-20 bg-work-Content  border-1 border-white shadow-content rounded-md p-12 flex gap-10 transition-project ${
         getIsRendered() ? "opacity-100 w-full" : "translate-x-1/2 w-0 opacity-0"
-      } duration-500`}
+      } duration-1000`}
     >
       <div
         className="w-[400px] h-[300px] rounded-md shadow-thumbnail border-black relative bg-black"

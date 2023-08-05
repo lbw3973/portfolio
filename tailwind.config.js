@@ -85,7 +85,7 @@ module.exports = {
         },
       },
       transitionProperty: {
-        project: "opacity, transform",
+        project: "opacity, transform, width",
       },
     },
   },
