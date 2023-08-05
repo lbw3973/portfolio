@@ -39,7 +39,7 @@ function ContentItem({ content }: { content: IProjectItem }) {
           style={{ width: "100%", height: "100%" }}
         />
         {isHovered && (
-          <div className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 left-1/2 text-white flex items-center cursor-pointer">
+          <div className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 left-1/2 text-white flex items-center cursor-pointer text-xl">
             <span>GitHub로 이동하기</span>
             <RiExternalLinkLine />
           </div>
@@ -52,7 +52,7 @@ function ContentItem({ content }: { content: IProjectItem }) {
             {content.deploy && (
               <button
                 onClick={clickButtonHandler}
-                className="w-[100px] h-full bg-primary-normal rounded-lg text-white font-bold duration-300 ease-in-out hover:bg-[#9759bb]"
+                className="w-[100px] h-full bg-[#ad97cf] rounded-lg text-white font-bold duration-300 ease-in-out hover:bg-[#9759bb]"
               >
                 VIEW
               </button>
