@@ -8,6 +8,9 @@
   "SASS": {
     "src": "/assets/images/SASS.png"
   },
+  "Styled-Components": {
+    "src": "/assets/images/Styled-Components.png"
+  },
   "TailwindCSS": {
     "src": "/assets/images/TailwindCSS.png"
   },
