@@ -57,9 +57,7 @@ function Header() {
         const workPosition =
           workSection!.getBoundingClientRect().top + window.scrollY - profileSection.clientHeight / 3;
 
-        if (window.scrollY === 0) {
-          return "";
-        } else if (window.scrollY < profilePosition) {
+        if (window.scrollY < profilePosition) {
           return SECTION.HOME;
         } else if (window.scrollY < workPosition) {
           return SECTION.PROFILE;
