@@ -84,6 +84,9 @@ module.exports = {
           "100%": { transform: "scale(1.2)" },
         },
       },
+      transitionProperty: {
+        project: "opacity, transform",
+      },
     },
   },
   plugins: [],

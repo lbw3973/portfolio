@@ -9,8 +9,8 @@ function Projects() {
       <SubTitle text="Works" />
       {Object.values(projects)
         .reverse()
-        .map(content => (
-          <ContentItem key={content.name} content={content} />
+        .map((content, index) => (
+          <ContentItem key={content.name} content={content} index={index} />
         ))}
     </section>
   );

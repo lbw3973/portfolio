@@ -1,29 +1,63 @@
 "use client";
 import { IProjectItem } from "@/interface/projectItem";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RiExternalLinkLine } from "react-icons/ri";
 
 const LI_STYLE = "mb-3 grid grid-cols-[110px_1fr]";
 const H6_STYLE = "text-[#7E7E7E] font-bold mr-5 whitespace-nowrap";
 
-function ContentItem({ content }: { content: IProjectItem }) {
+function ContentItem({ content, index }: { content: IProjectItem; index: number }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [position, setPosition] = useState(0);
+  const [currentY, setCurrentY] = useState(0);
+  const [isRendered, setIsRendered] = useState(false);
+
+  function onScroll() {
+    setCurrentY(window.scrollY);
+  }
+
+  useEffect(() => {
+    setPosition(document.getElementById("Work")!.getBoundingClientRect().top + index * 460 + window.scrollY - 300);
+
+    if (window.scrollY > 0) {
+      setCurrentY(window.scrollY);
+    }
+    window.addEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
   const mouseOverHandler = () => {
     setIsHovered(true);
   };
+
   const mouseOutHandler = () => {
     setIsHovered(false);
   };
+
   const clickImageHanlder = () => {
     window.open(content.github);
   };
+
   const clickButtonHandler = () => {
     window.open(content.deploy);
   };
 
+  const getIsRendered = () => {
+    if (!isRendered && position < currentY) {
+      setIsRendered(true);
+    }
+    return isRendered;
+  };
+
   return (
-    <div className="h-[400px] mb-20 bg-work-Content w-full border-1 border-white shadow-content rounded-md p-12 flex gap-10">
+    <div
+      className={`h-[400px] mb-20 bg-work-Content  border-1 border-white shadow-content rounded-md p-12 flex gap-10 transition-project ${
+        getIsRendered() ? "opacity-100 w-full" : "translate-x-1/2 w-0 opacity-0"
+      } duration-500`}
+    >
       <div
         className="w-[400px] h-[300px] rounded-md shadow-thumbnail border-black relative bg-black"
         onMouseOver={mouseOverHandler}
