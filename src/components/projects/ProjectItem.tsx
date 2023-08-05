@@ -18,7 +18,8 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
   }
 
   useEffect(() => {
-    setPosition(document.getElementById("Work")!.getBoundingClientRect().top + index * 460 + window.scrollY - 300);
+    const offset = window.screen.height < 1080 ? 1500 : 300;
+    setPosition(document.getElementById("Work")!.getBoundingClientRect().top + index * 460 + window.scrollY - offset);
 
     if (window.scrollY > 0) {
       setCurrentY(window.scrollY);
