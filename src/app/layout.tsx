@@ -1,4 +1,4 @@
-import Header from "@/components/common/header/Header";
+import Header from "@/components/common/Header";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
