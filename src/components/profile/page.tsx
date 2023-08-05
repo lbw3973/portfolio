@@ -9,7 +9,7 @@ function Profile() {
     <section className="py-28 min-w-[1000px] px-4" id="Profile">
       <SubTitle text="Profile" />
       <div className="border-1 border-white p-10 rounded-md">
-        <div className="flex justify-between mb-10 gap-10">
+        <div className="flex justify-between mb-16 gap-10">
           <div className="flex flex-col justify-around min-w-[500px]">
             <div className="leading-relaxed font-bold text-5xl">
               {data.title.map(item => (
