@@ -49,20 +49,27 @@ function Header() {
       const homeSection = document.getElementById(SECTION.HOME);
       const profileSection = document.getElementById(SECTION.PROFILE);
       const workSection = document.getElementById(SECTION.WORK);
+      const contactSection = document.getElementById(SECTION.CONTACT);
 
-      if (homeSection && profileSection && workSection) {
+      if (homeSection && profileSection && workSection && contactSection) {
         const homePosition = homeSection.getBoundingClientRect().top + window.scrollY;
         const profilePosition =
           profileSection.getBoundingClientRect().top + window.scrollY - profileSection.clientHeight / 3;
         const workPosition =
           workSection!.getBoundingClientRect().top + window.scrollY - profileSection.clientHeight / 3;
+        const contactPosition = contactSection.getBoundingClientRect().top + window.scrollY - 400;
 
         if (window.scrollY < profilePosition) {
           return SECTION.HOME;
         } else if (window.scrollY < workPosition) {
           return SECTION.PROFILE;
-        } else {
+        } else if (
+          window.scrollY < contactPosition &&
+          document.body.clientHeight >= window.scrollY + window.innerHeight
+        ) {
           return SECTION.WORK;
+        } else {
+          return SECTION.CONTACT;
         }
       }
     }
@@ -78,8 +85,8 @@ function Header() {
         return "w-[78px] left-[158px]";
       case SECTION.WORK:
         return "w-[61px] left-[301px]";
-      // case SECTION.CONTACT:
-      //   return 'w-[92px] left-40'
+      case SECTION.CONTACT:
+        return "w-[92px] left-[422px]";
       default:
         return "";
     }
@@ -110,7 +117,7 @@ function Header() {
           <li className={`${NAV_STYLE} ${getCurrentSection() === SECTION.WORK && "text-[#9D5CBB]"}`}>
             <span>Work</span>
           </li>
-          <li className={`${NAV_STYLE}`}>
+          <li className={`${NAV_STYLE} ${getCurrentSection() === SECTION.CONTACT && "text-[#9D5CBB]"}`}>
             <span>Contact</span>
           </li>
           <div className={`h-1 bg-[#9D5CBB] duration-500 absolute bottom-0 ${getIndicatorPosition()}`}></div>
