@@ -1,5 +1,5 @@
 import React from "react";
-import data from "@/constants/data.json";
+import data from "@/constants/user.json";
 
 function Footer() {
   return (

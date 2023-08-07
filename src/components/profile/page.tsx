@@ -1,4 +1,4 @@
-import data from "@/constants/data.json";
+import data from "@/constants/user.json";
 import Image from "next/image";
 import SubTitle from "@/components/common/SubTitle";
 import Skills from "@/components/profile/Skills";

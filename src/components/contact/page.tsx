@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import SubTitle from "../common/SubTitle";
-import data from "@/constants/data.json";
+import data from "@/constants/user.json";
 import { BsPhone } from "react-icons/bs";
 import { TfiEmail } from "react-icons/tfi";
 import Image from "next/image";
