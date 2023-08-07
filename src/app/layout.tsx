@@ -2,6 +2,7 @@ import Header from "@/components/common/Header";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
+import Footer from "@/components/common/Footer";
 
 const inter = Noto_Sans_KR({ subsets: ["latin"], weight: ["400", "700"] });
 
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={inter.className}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
