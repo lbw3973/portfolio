@@ -1,7 +1,9 @@
 {
   "name": "이병욱",
+  "engName": "LEE BYOUNGWOOK",
   "birth": "1995.5.30",
   "email": "lbw3973@gmail.com",
+  "phoneNumber": "010-9461-8325",
   "title": ["항상 배움의 자세로 성장하는", "프론트엔드 개발자", "이병욱입니다."],
   "subtitle": [
     "'느린 것을 두려워 말고, 멈추는 것을 두려워하라'",
@@ -11,5 +13,6 @@
     " 빠르게 변화하는 트렌드에 맞춰 발전하는",
     "프론트엔드 개발자가 되겠습니다."
   ],
-  "github": "https://github.com/lbw3973"
+  "github": "https://github.com/lbw3973",
+  "velog": "https://velog.io/@__bw95__"
 }
