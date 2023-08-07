@@ -1,4 +1,3 @@
-import React from "react";
 import data from "@/constants/data.json";
 import Image from "next/image";
 import SubTitle from "@/components/common/SubTitle";

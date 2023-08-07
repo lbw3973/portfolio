@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
 import SkillIcons from "@/constants/skillIcon.json";
 
 function Skills() {
