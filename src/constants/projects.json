@@ -52,7 +52,7 @@
       "localStorage에 즐겨찾기, 내 지역 정보 저장"
     ],
     "github": "https://github.com/lbw3973/Air-Pollution-Notification",
-    "thumbnail": "",
+    "thumbnail": "/assets/images/airPollution.png",
     "deploy": "https://air-pollution-notification.vercel.app/"
   },
   "4": {
