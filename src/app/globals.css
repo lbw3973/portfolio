@@ -5,4 +5,7 @@
 body {
   line-height: 1;
   background: linear-gradient(180deg, #dbe9f6 12%, #fefcc9 18%, #f7d0d5 70%);
+  -moz-user-select: none;
+  -ms-use-select: none;
+  user-select: none;
 }
