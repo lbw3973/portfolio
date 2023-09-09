@@ -74,7 +74,7 @@
   "5": {
     "name": "머니브릿지 백오피스",
     "period": "23.6.27 ~ 23.7.14",
-    "workForce": "FE 3인, BE 3인",
+    "workForce": "FE 3인, BE 2인",
     "languages": ["TypeScript", "React", "NextJs"],
     "introduction": "머니브릿지의 관리자 페이지",
     "parts": [
