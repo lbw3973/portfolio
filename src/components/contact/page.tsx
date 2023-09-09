@@ -9,16 +9,6 @@ import Image from "next/image";
 const FLEX_COL = "flex flex-col items-center gap-2";
 
 function Contact() {
-  const clickGitHubHandler = () => {
-    window.open(data.github);
-  };
-  const clickVelogHandler = () => {
-    window.open(data.velog);
-  };
-  const clickNotionHandler = () => {
-    window.open(data.notion);
-  };
-
   return (
     <section className="pt-28 min-w-[1000px] px-4 mb-28" id="Contact">
       <div className="w-full h-[600px] bg-white rounded-lg pt-px">
@@ -41,7 +31,7 @@ function Contact() {
                 width={60}
                 height={60}
                 className="cursor-pointer"
-                onClick={clickGitHubHandler}
+                onClick={() => window.open(data.github)}
               />
             </div>
             <div className={FLEX_COL}>
@@ -52,7 +42,7 @@ function Contact() {
                 width={60}
                 height={60}
                 className="cursor-pointer"
-                onClick={clickNotionHandler}
+                onClick={() => window.open(data.notion)}
               />
             </div>
             <div className={FLEX_COL}>
@@ -63,7 +53,7 @@ function Contact() {
                 width={60}
                 height={60}
                 className="cursor-pointer"
-                onClick={clickVelogHandler}
+                onClick={() => window.open(data.velog)}
               />
             </div>
           </div>

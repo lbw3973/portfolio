@@ -38,14 +38,6 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
     setIsHovered(false);
   };
 
-  const clickImageHanlder = () => {
-    window.open(content.github);
-  };
-
-  const clickButtonHandler = () => {
-    window.open(content.deploy);
-  };
-
   const getIsRendered = () => {
     if (!isRendered && position < currentY) {
       setIsRendered(true);
@@ -63,7 +55,7 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
         className="w-[400px] h-[300px] rounded-md shadow-thumbnail border-black relative bg-black"
         onMouseOver={mouseOverHandler}
         onMouseOut={mouseOutHandler}
-        onClick={clickImageHanlder}
+        onClick={() => window.open(content.github)}
       >
         <Image
           src={content.thumbnail}
@@ -86,7 +78,7 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
             <h2 className="mt-2 font-bold text-3xl h-full">{content.name}</h2>
             {content.deploy && (
               <button
-                onClick={clickButtonHandler}
+                onClick={() => window.open(content.deploy)}
                 className="w-[100px] h-full bg-[#ad97cf] rounded-lg text-white font-bold duration-300 ease-in-out hover:bg-[#9759bb]"
               >
                 VIEW
