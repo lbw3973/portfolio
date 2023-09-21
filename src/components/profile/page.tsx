@@ -24,7 +24,13 @@ function Profile() {
             </div>
           </div>
           <div className="h-full">
-            <Image src={data.profileImage} alt="profileImage" width={400} height={400} className="rounded-md" />
+            <Image
+              src={data.profileImage}
+              alt="profileImage"
+              width={400}
+              height={400}
+              className="rounded-md duration-300 hover:opacity-70"
+            />
             <div className="mt-5 text-xl">
               <p className="leading-tight">
                 <span className="text-2xl font-bold mr-2">생년월일</span>
