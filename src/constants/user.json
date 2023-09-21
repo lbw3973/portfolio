@@ -4,6 +4,7 @@
   "birth": "1995.5.30",
   "email": "lbw3973@gmail.com",
   "phoneNumber": "010-9461-8325",
+  "profileImage": "/assets/images/MainProfile.jpg",
   "title": ["항상 배움의 자세로 성장하는", "프론트엔드 개발자", "이병욱입니다."],
   "subtitle": [
     "'느린 것을 두려워 말고, 멈추는 것을 두려워하라'",
@@ -15,5 +16,5 @@
   ],
   "github": "https://github.com/lbw3973",
   "velog": "https://velog.io/@__bw95__",
-  "notion": "https://www.notion.so/64ea25ccece14e81ac8486d5be5d6324"
+  "notion": "https://fifth-cent-a1a.notion.site/689dd2e76c1748e38535b83ce024306a"
 }
