@@ -9,3 +9,11 @@ body {
   -ms-use-select: none;
   user-select: none;
 }
+
+
+@font-face {
+  font-family: "NanumSquareNeo";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../font/NanumSquareNeo-Variable.woff") format("woff");
+}

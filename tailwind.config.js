@@ -7,6 +7,9 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      NanumSquareNeo: ["NanumSquareNeo"],
+    },
     colors: {
       "primary-normal": "#9885b7",
       "primary-light": "#3A7391",

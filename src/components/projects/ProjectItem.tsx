@@ -49,7 +49,7 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
     <div
       className={`h-[400px] mb-20 bg-work-Content  border-1 border-white shadow-content rounded-md p-12 flex gap-10 transition-project ${
         getIsRendered() ? "opacity-100 w-full" : "translate-x-1/2 w-0 opacity-0"
-      } duration-1000`}
+      } duration-1000 font-NanumSquareNeo`}
     >
       <div
         className="w-[400px] h-[300px] rounded-md shadow-thumbnail border-black relative bg-black"
@@ -66,7 +66,7 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
           style={{ width: "100%", height: "100%" }}
         />
         {isHovered && (
-          <div className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 left-1/2 text-white flex items-center cursor-pointer text-xl">
+          <div className="absolute flex items-center text-xl text-white -translate-x-1/2 -translate-y-1/2 cursor-pointer top-1/2 left-1/2">
             <span>GitHub로 이동하기</span>
             <RiExternalLinkLine />
           </div>
@@ -74,8 +74,8 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
       </div>
       <div className="mx-auto w-[500px] flex flex-col justify-between">
         <div>
-          <div className="flex items-center h-10 justify-between">
-            <h2 className="mt-2 font-bold text-3xl h-full">{content.name}</h2>
+          <div className="flex items-center justify-between h-10">
+            <h2 className="h-full mt-2 text-3xl font-bold">{content.name}</h2>
             {content.deploy && (
               <button
                 onClick={() => window.open(content.deploy)}
@@ -113,7 +113,7 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
               <h6 className={H6_STYLE}>상세 역할</h6>
               <div>
                 {content.parts.map(part => (
-                  <p key={part} className="mb-2 break-keep">
+                  <p key={part} className="mb-2 leading-tight break-keep">
                     {part}
                   </p>
                 ))}
