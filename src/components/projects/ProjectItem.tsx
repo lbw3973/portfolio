@@ -17,7 +17,6 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
   const onScroll = () => {
     setCurrentY(window.scrollY);
   };
-  console.log(position);
 
   useEffect(() => {
     setPosition(
