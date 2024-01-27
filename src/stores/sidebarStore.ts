@@ -7,7 +7,7 @@ export interface ISidebarStore {
 }
 
 const sidebarStore = create<ISidebarStore>(set => ({
-  isOpen: true,
+  isOpen: false,
   setToggle: () => set(state => ({ isOpen: !state.isOpen })),
   setOpen: () => set({ isOpen: true }),
 }));

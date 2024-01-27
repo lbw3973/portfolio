@@ -4,6 +4,7 @@ import React, { MouseEvent, useEffect, useState } from "react";
 import profileImage from "/public/assets/images/profileImage.jpg";
 import HamburgerMenu from "./HamburgerMenu";
 import { useSidebarStore } from "@/stores/sidebarStore";
+import data from "@/constants/user.json";
 
 enum SECTION {
   HOME = "Home",
@@ -14,7 +15,6 @@ enum SECTION {
 
 const liEls = ["Home", "Profile", "Work", "Contact"];
 const NAV_STYLE_PC = `cursor-pointer font-bold text-[#71787d] hover:text-primary-normal hover:font-bold w-[120px]`;
-const NAV_SYLTE_MOBILE = "";
 
 function Header() {
   const [position, setPosition] = useState(0);
@@ -38,7 +38,7 @@ function Header() {
   }, []);
 
   const clickImageHandler = () => {
-    window.open("https://github.com/lbw3973");
+    window.open(data.github);
   };
 
   const clickNavHandler = (e: MouseEvent<HTMLUListElement>) => {
