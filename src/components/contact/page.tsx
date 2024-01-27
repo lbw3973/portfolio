@@ -10,10 +10,10 @@ const FLEX_COL = "flex flex-col items-center gap-2";
 
 function Contact() {
   return (
-    <section className="pt-28 md:min-w-[1000px] px-4 mb-28" id="Contact">
+    <section className="pt-28 lg:min-w-[1000px] px-4 mb-28" id="Contact">
       <div className="w-full h-[600px] bg-white rounded-lg pt-px">
         <SubTitle text="Contact Me" />
-        <div className="mx-auto md:w-1/2 w-full text-2xl">
+        <div className="w-full mx-auto text-2xl md:w-1/2">
           <div className={`${FLEX_COL} mb-[30px]`}>
             <BsPhone color="#9885D7" size={40} />
             <p className="whitespace-nowrap">{data.phoneNumber}</p>
@@ -22,7 +22,7 @@ function Contact() {
             <TfiEmail color="#9885D7" size={40} />
             <p>{data.email}</p>
           </div>
-          <div className="flex justify-evenly pt-10">
+          <div className="flex pt-10 justify-evenly">
             <div className={FLEX_COL}>
               <p>GitHub</p>
               <Image

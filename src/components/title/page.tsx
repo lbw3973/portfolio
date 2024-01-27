@@ -7,8 +7,8 @@ const H2_STYLES =
 
 function Title() {
   return (
-    <section className="lg:h-[100vh] pt-28 md:min-w-[1000px] px-4" id="Home">
-      <div className="flex items-center lg:justify-center h-full flex-col lg:flex-row">
+    <section className="lg:h-[100vh] pt-28 lg:min-w-[1000px] px-4" id="Home">
+      <div className="flex flex-col items-center h-full lg:justify-center lg:flex-row">
         <div className="w-full text-center">
           <hgroup className="font-bold">
             <h2 className={`bg-title-First ${H2_STYLES}`}>Design</h2>

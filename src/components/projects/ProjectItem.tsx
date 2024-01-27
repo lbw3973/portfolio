@@ -6,7 +6,7 @@ import { RiExternalLinkLine } from "react-icons/ri";
 
 const LI_STYLE =
   "mb-3 md:grid md:grid-cols-[110px_1fr] flex items-center md:gap-1 gap-2 flex-col md:text-start text-center";
-const H6_STYLE = "text-[#7E7E7E] font-bold md:mr-5 whitespace-nowrap";
+const H6_STYLE = "text-[#838383] font-bold md:mr-5 whitespace-nowrap";
 
 function ContentItem({ content, index }: { content: IProjectItem; index: number }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -68,17 +68,17 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
           style={{ width: "100%", height: "100%" }}
         />
         {isHovered && (
-          <div className="absolute flex items-center sm:text-xl whitespace-nowrap text-white -translate-x-1/2 -translate-y-1/2 cursor-pointer top-1/2 left-1/2">
+          <div className="absolute flex items-center text-white -translate-x-1/2 -translate-y-1/2 cursor-pointer sm:text-xl whitespace-nowrap top-1/2 left-1/2">
             <span>GitHub로 이동하기</span>
             <RiExternalLinkLine />
           </div>
         )}
       </div>
-      <div className="lg:hidden block text-xs mb-2">*이미지를 클릭하면 Github로 이동합니다.</div>
+      <div className="block mb-2 text-xs lg:hidden">*이미지를 클릭하면 Github로 이동합니다.</div>
       <div className="mx-auto lg:w-[500px] flex flex-col justify-between">
         <div>
           <div className="flex items-center justify-between h-10">
-            <h2 className="sm:text-3xl text-2xl font-bold break-keep">{content.name}</h2>
+            <h2 className="text-2xl font-bold sm:text-3xl break-keep">{content.name}</h2>
             {content.deploy && (
               <button
                 onClick={() => window.open(content.deploy)}
@@ -91,15 +91,15 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
           <ul className="my-5 text-base">
             <li className={LI_STYLE}>
               <h6 className={H6_STYLE}>작업인원</h6>
-              <p>{content.workForce}</p>
+              <p className="text-sm sm:text-base text-[#242424] font-semibold">{content.workForce}</p>
             </li>
             <li className={LI_STYLE}>
               <h6 className={H6_STYLE}>작업기간</h6>
-              <p>{content.period}</p>
+              <p className="text-sm sm:text-base text-[#242424] font-semibold">{content.period}</p>
             </li>
             <li className={LI_STYLE}>
               <h6 className={H6_STYLE}>사용기술</h6>
-              <p>
+              <p className="text-sm sm:text-base text-[#242424] font-semibold">
                 {content.languages.map((language, index) => (
                   <span key={Date.now().toString() + language}>
                     {language}
@@ -110,13 +110,16 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
             </li>
             <li className={LI_STYLE}>
               <h6 className={H6_STYLE}>프로젝트 소개</h6>
-              <p className="break-keep">{content.introduction}</p>
+              <p className="text-sm break-keep sm:text-base text-[#242424] font-semibold">{content.introduction}</p>
             </li>
             <li className={LI_STYLE}>
               <h6 className={H6_STYLE}>상세 역할</h6>
               <div>
                 {content.parts.map(part => (
-                  <p key={part} className="mb-2 leading-tight break-keep">
+                  <p
+                    key={part}
+                    className="mb-2 text-sm leading-tight sm:text-base break-keep text-[#242424] font-semibold"
+                  >
                     {part}
                   </p>
                 ))}
