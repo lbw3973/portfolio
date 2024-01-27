@@ -2,6 +2,8 @@
 import Image from "next/image";
 import React, { MouseEvent, useEffect, useState } from "react";
 import profileImage from "/public/assets/images/profileImage.jpg";
+import HamburgerMenu from "./HamburgerMenu";
+import { useSidebarStore } from "@/stores/sidebarStore";
 
 enum SECTION {
   HOME = "Home",
@@ -10,15 +12,18 @@ enum SECTION {
   CONTACT = "Contact",
 }
 
-const NAV_STYLE = `cursor-pointer font-bold text-[#71787d] hover:text-primary-normal hover:font-bold w-[120px]`;
+const liEls = ["Home", "Profile", "Work", "Contact"];
+const NAV_STYLE_PC = `cursor-pointer font-bold text-[#71787d] hover:text-primary-normal hover:font-bold w-[120px]`;
+const NAV_SYLTE_MOBILE = "";
 
 function Header() {
   const [position, setPosition] = useState(0);
   const [isDocument, setIsDocument] = useState(false);
+  const { isOpen, setToggle } = useSidebarStore();
 
-  function onScroll() {
+  const onScroll = () => {
     setPosition(window.scrollY);
-  }
+  };
 
   useEffect(() => {
     setIsDocument(true);
@@ -98,30 +103,45 @@ function Header() {
         position > 0 && "bg-white !h-20 shadow-bottom"
       } duration-500 z-10`}
     >
-      <div className="flex justify-between items-center min-w-[500px] xl:w-[1200px] w-full mx-auto my-5 px-4">
+      <div className="relative flex justify-between items-center xl:w-[1200px] w-full mx-auto h-full px-4">
         <Image
           src={profileImage}
           alt="profileImage"
           width={50}
           height={50}
-          className="rounded-full hover:cursor-pointer hover:opacity-50"
+          className="z-10 rounded-full hover:cursor-pointer hover:opacity-50"
           onClick={clickImageHandler}
         />
-        <ul className="flex gap-4 text-2xl text-center relative py-3" onClick={clickNavHandler}>
-          <li className={`${NAV_STYLE} ${getCurrentSection() === SECTION.HOME && "text-[#9D5CBB]"}`}>
-            <span>Home</span>
-          </li>
-          <li className={`${NAV_STYLE} ${getCurrentSection() === SECTION.PROFILE && "text-[#9D5CBB]"}`}>
-            <span>Profile</span>
-          </li>
-          <li className={`${NAV_STYLE} ${getCurrentSection() === SECTION.WORK && "text-[#9D5CBB]"}`}>
-            <span>Work</span>
-          </li>
-          <li className={`${NAV_STYLE} ${getCurrentSection() === SECTION.CONTACT && "text-[#9D5CBB]"}`}>
-            <span>Contact</span>
-          </li>
+        <ul className="relative hidden gap-4 py-3 text-2xl text-center md:flex" onClick={clickNavHandler}>
+          {liEls.map(li => (
+            <li key={li} className={`${NAV_STYLE_PC} ${getCurrentSection() === li && "text-[#9D5CBB]"}`}>
+              <span>{li}</span>
+            </li>
+          ))}
           <div className={`h-1 bg-[#9D5CBB] duration-500 absolute bottom-0 ${getIndicatorPosition()}`}></div>
         </ul>
+        <div className="z-10 block md:hidden">
+          <HamburgerMenu />
+        </div>
+        <div
+          className={`block md:hidden absolute left-0 w-full ${
+            isOpen ? "h-[500px] visible  opacity-90" : "h-0 invisible  opacity-0"
+          }  ${position > 0 ? "top-full" : "top-0"} duration-500`}
+        >
+          <ul
+            className="flex flex-col h-full text-3xl text-[#71787d] font-bold"
+            onClick={e => {
+              clickNavHandler(e);
+              setToggle();
+            }}
+          >
+            {liEls.map(li => (
+              <li key={li} className="flex items-center justify-center w-full h-full bg-white">
+                <span>{li}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </nav>
   );
