@@ -118,5 +118,37 @@
     "github": "https://github.com/lbw3973/cafe-24",
     "thumbnail": "/assets/images/saebyeok-gamseong.PNG",
     "deploy": "https://www.saebyeok-gamseong.com/"
+  },
+  "8": {
+    "name": "Moanda've",
+    "period": "23.12.15 ~ 진행 중",
+    "workForce": "FE 2인",
+    "languages": ["TypeScript", "React", "Styled-Components"],
+    "introduction": "수원에 위치한 비건카페 모앤더비의 홈페이지",
+    "parts": [
+      "프로젝트의 구조 설계 및 UI/UX 디자인",
+      "Swiper를 사용하여 Image Carousel 컴포넌트 구현",
+      "Styled-Components의 Media Query를 활용한 반응형 디자인 구현",
+      "Kakao Map API를 사용하여 LocationCard 컴포넌트 구현"
+    ],
+    "github": "https://github.com/lbw3973/moanda-ve",
+    "thumbnail": "/assets/images/moanda-ve.PNG",
+    "deploy": "https://moanda-ve.vercel.app/"
+  },
+  "9": {
+    "name": "DISEARCH",
+    "period": "24.01.18 ~ 진행 중",
+    "workForce": "FE 2인, BE 1인",
+    "languages": ["TypeScript", "React", "TailwindCSS"],
+    "introduction": "Discord 이용자들에게 만남의 장을 제공하는 웹사이트",
+    "parts": [
+      "프로젝트의 구조 설계 및 UI/UX 디자인",
+      "Discord API를 사용하여 Login 구현",
+      "Discord API를 사용하여 사용자 정보 및 보유채널 선택 모달을 구현",
+      "서버와의 통신을 위한 Axios Intance 구현 및 기타 API 구현"
+    ],
+    "github": "https://github.com/lbw3973/DISEARCH-FRONT-END",
+    "thumbnail": "",
+    "deploy": "https://disearch.vercel.app/"
   }
 }
