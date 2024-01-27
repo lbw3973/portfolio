@@ -5,7 +5,7 @@ import projects from "@/constants/projects.json";
 
 function Projects() {
   return (
-    <section className="py-28 min-w-[1000px] px-4" id="Work">
+    <section className="py-28 lg:min-w-[1000px] px-4 mx-auto" id="Work">
       <SubTitle text="Works" />
       {Object.values(projects)
         .reverse()

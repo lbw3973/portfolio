@@ -4,8 +4,9 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { RiExternalLinkLine } from "react-icons/ri";
 
-const LI_STYLE = "mb-3 grid grid-cols-[110px_1fr]";
-const H6_STYLE = "text-[#7E7E7E] font-bold mr-5 whitespace-nowrap";
+const LI_STYLE =
+  "mb-3 md:grid md:grid-cols-[110px_1fr] flex items-center md:gap-1 gap-2 flex-col md:text-start text-center";
+const H6_STYLE = "text-[#7E7E7E] font-bold md:mr-5 whitespace-nowrap";
 
 function ContentItem({ content, index }: { content: IProjectItem; index: number }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -47,12 +48,12 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
 
   return (
     <div
-      className={`h-[400px] mb-20 bg-work-Content  border-1 border-white shadow-content rounded-md p-12 flex gap-10 transition-project ${
+      className={`lg:h-[400px] mb-20 bg-work-Content  border-1 border-white shadow-content rounded-md sm:p-12 p-6 flex flex-col lg:gap-10 gap-3 transition-project lg:flex-row ${
         getIsRendered() ? "opacity-100 w-full" : "translate-x-1/2 w-0 opacity-0"
       } duration-1000 font-NanumSquareNeo`}
     >
       <div
-        className="w-[400px] h-[300px] rounded-md shadow-thumbnail border-black relative bg-black"
+        className="lg:w-[400px] sm:h-[300px] h-[200px] rounded-md shadow-thumbnail border-black relative hover:bg-black duration-300"
         onMouseOver={mouseOverHandler}
         onMouseOut={mouseOutHandler}
         onClick={() => window.open(content.github)}
@@ -60,22 +61,24 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
         <Image
           src={content.thumbnail}
           alt="thumbnail"
-          width={400}
-          height={300}
-          className={`object-cover rounded-md cursor-pointer ${isHovered && "opacity-10"} duration-300`}
+          // width={400}
+          // height={300}
+          fill
+          className={`object-contain rounded-md cursor-pointer ${isHovered && "opacity-10"} duration-300`}
           style={{ width: "100%", height: "100%" }}
         />
         {isHovered && (
-          <div className="absolute flex items-center text-xl text-white -translate-x-1/2 -translate-y-1/2 cursor-pointer top-1/2 left-1/2">
+          <div className="absolute flex items-center sm:text-xl whitespace-nowrap text-white -translate-x-1/2 -translate-y-1/2 cursor-pointer top-1/2 left-1/2">
             <span>GitHub로 이동하기</span>
             <RiExternalLinkLine />
           </div>
         )}
       </div>
-      <div className="mx-auto w-[500px] flex flex-col justify-between">
+      <div className="lg:hidden block text-xs mb-2">*이미지를 클릭하면 Github로 이동합니다.</div>
+      <div className="mx-auto lg:w-[500px] flex flex-col justify-between">
         <div>
           <div className="flex items-center justify-between h-10">
-            <h2 className="h-full mt-2 text-3xl font-bold">{content.name}</h2>
+            <h2 className="sm:text-3xl text-2xl font-bold break-keep">{content.name}</h2>
             {content.deploy && (
               <button
                 onClick={() => window.open(content.deploy)}

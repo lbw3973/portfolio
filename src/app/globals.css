@@ -8,8 +8,9 @@ body {
   -moz-user-select: none;
   -ms-use-select: none;
   user-select: none;
-}
 
+  min-width: 320px;
+}
 
 @font-face {
   font-family: "NanumSquareNeo";

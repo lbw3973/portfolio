@@ -5,7 +5,7 @@ import Title from "../components/title/page";
 
 export default function Home() {
   return (
-    <main className="min-w-[500px] mx-auto max-w-[1200px]">
+    <main className="mx-auto max-w-[1200px]">
       <Title />
       <Profile />
       <Projects />

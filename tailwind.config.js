@@ -7,6 +7,13 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      xs: "375px",
+      sm: "480px",
+      md: "768px",
+      lg: "1048px",
+      xl: "1400px",
+    },
     fontFamily: {
       NanumSquareNeo: ["NanumSquareNeo"],
     },

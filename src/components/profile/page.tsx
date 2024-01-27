@@ -5,7 +5,7 @@ import Skills from "@/components/profile/Skills";
 
 function Profile() {
   return (
-    <section className="py-28 min-w-[1000px] px-4" id="Profile">
+    <section className="py-28 md:min-w-[1000px] px-4" id="Profile">
       <SubTitle text="Profile" />
       <div className="p-10 border-white rounded-md border-1 font-NanumSquareNeo">
         <div className="flex gap-10 mb-16 justify-evenly">

@@ -98,7 +98,7 @@ function Header() {
         position > 0 && "bg-white !h-20 shadow-bottom"
       } duration-500 z-10`}
     >
-      <div className="flex justify-between items-center min-w-[500px] w-[1200px] mx-auto my-5 px-4">
+      <div className="flex justify-between items-center min-w-[500px] xl:w-[1200px] w-full mx-auto my-5 px-4">
         <Image
           src={profileImage}
           alt="profileImage"
