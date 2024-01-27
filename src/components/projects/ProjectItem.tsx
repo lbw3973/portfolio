@@ -14,13 +14,18 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
   const [currentY, setCurrentY] = useState(0);
   const [isRendered, setIsRendered] = useState(false);
 
-  function onScroll() {
+  const onScroll = () => {
     setCurrentY(window.scrollY);
-  }
+  };
+  console.log(position);
 
   useEffect(() => {
-    const offset = window.screen.height < 1080 ? 1500 : 300;
-    setPosition(document.getElementById("Work")!.getBoundingClientRect().top + index * 460 + window.scrollY - offset);
+    setPosition(
+      document.getElementById("Work")!.getBoundingClientRect().top +
+        index * (window.innerWidth < 1048 ? 760 : 430) +
+        window.scrollY -
+        200,
+    );
 
     if (window.scrollY > 0) {
       setCurrentY(window.scrollY);

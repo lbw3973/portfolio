@@ -10,7 +10,7 @@ const FLEX_COL = "flex flex-col items-center gap-2";
 
 function Contact() {
   return (
-    <section className="pt-28 lg:min-w-[1000px] px-4 mb-28" id="Contact">
+    <section className="lg:min-w-[1000px] px-4 mb-28" id="Contact">
       <div className="w-full h-[600px] bg-white rounded-lg pt-px">
         <SubTitle text="Contact Me" />
         <div className="w-full mx-auto text-2xl md:w-1/2">
