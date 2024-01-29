@@ -1,7 +1,7 @@
 "use client";
 import { IProjectItem } from "@/interface/projectItem";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { RefObject, useEffect, useRef, useState } from "react";
 import { RiExternalLinkLine } from "react-icons/ri";
 
 const LI_STYLE = "mb-3 md:grid md:grid-cols-[110px_1fr] flex md:gap-1 gap-2 flex-col md:text-start text-center";
@@ -9,21 +9,20 @@ const H6_STYLE = "text-[#838383] font-bold md:mr-5 whitespace-nowrap";
 
 function ContentItem({ content, index }: { content: IProjectItem; index: number }) {
   const [isHovered, setIsHovered] = useState(false);
-  const [position, setPosition] = useState(0);
   const [currentY, setCurrentY] = useState(0);
-  const [isRendered, setIsRendered] = useState(false);
+  const [outerHeightOffset, setOuterHeightOffset] = useState(0);
+  const itemRef = useRef<HTMLDivElement>(null);
 
   const onScroll = () => {
     setCurrentY(window.scrollY);
   };
 
   useEffect(() => {
-    setPosition(
-      document.getElementById("Work")!.getBoundingClientRect().top +
-        index * (window.innerWidth < 1048 ? 730 : 430) +
-        window.scrollY -
-        200,
-    );
+    setOuterHeightOffset(window.outerHeight - 130);
+
+    window.addEventListener("resize", () => {
+      setOuterHeightOffset(window.outerHeight - 130);
+    });
 
     if (window.scrollY > 0) {
       setCurrentY(window.scrollY);
@@ -34,6 +33,11 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
     };
   }, []);
 
+  const setAnimation = (ref: RefObject<HTMLDivElement>) => {
+    const LocationTop = (ref.current?.offsetTop as number) - outerHeightOffset;
+    return LocationTop < currentY;
+  };
+
   const mouseOverHandler = () => {
     setIsHovered(true);
   };
@@ -42,17 +46,11 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
     setIsHovered(false);
   };
 
-  const getIsRendered = () => {
-    if (!isRendered && position < currentY) {
-      setIsRendered(true);
-    }
-    return isRendered;
-  };
-
   return (
     <div
+      ref={itemRef}
       className={`lg:h-[400px] mb-20 w-full bg-work-Content  border-1 border-white shadow-content rounded-md sm:p-12 p-6 flex flex-col lg:gap-10 gap-3 transition-project lg:flex-row ${
-        getIsRendered() ? "opacity-100" : index % 2 ? "translate-x-2/3 opacity-0" : "-translate-x-2/3 opacity-0"
+        setAnimation(itemRef) ? "opacity-100" : index % 2 ? "translate-x-2/3 opacity-0" : "-translate-x-2/3 opacity-0"
       } duration-1000 font-NanumSquareNeo`}
     >
       <div
@@ -62,7 +60,7 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
         onClick={() => window.open(content.github)}
       >
         <Image
-          src={content.thumbnail}
+          src={content.thumbnail === "" ? "/assets/images/noImage.png" : content.thumbnail}
           alt="thumbnail"
           // width={400}
           // height={300}
