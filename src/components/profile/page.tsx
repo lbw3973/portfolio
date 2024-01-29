@@ -7,7 +7,7 @@ import { RefObject, useEffect, useRef, useState } from "react";
 
 function Profile() {
   const [currentY, setCurrentY] = useState(0);
-  const [innerHeightOffset, setInnerHeightOffset] = useState(0);
+  const [outerHeightOffset, setOuterHeightOffset] = useState(0);
   const subTitleRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
@@ -17,10 +17,10 @@ function Profile() {
   };
 
   useEffect(() => {
-    setInnerHeightOffset(window.innerHeight - 130);
+    setOuterHeightOffset(window.outerHeight - 130);
 
     window.addEventListener("resize", () => {
-      setInnerHeightOffset(window.innerHeight - 130);
+      setOuterHeightOffset(window.outerHeight - 130);
     });
 
     if (window.scrollY > 0) {
@@ -33,11 +33,7 @@ function Profile() {
   }, []);
 
   const setAnimation = (ref: RefObject<HTMLDivElement>) => {
-    const LocationTop = (ref.current?.offsetTop as number) - innerHeightOffset;
-    if (ref.current?.classList.contains("gap-2")) {
-      console.log(LocationTop, innerHeightOffset, currentY);
-    }
-
+    const LocationTop = (ref.current?.offsetTop as number) - outerHeightOffset;
     return LocationTop < currentY;
   };
 
