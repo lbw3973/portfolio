@@ -4,8 +4,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { RiExternalLinkLine } from "react-icons/ri";
 
-const LI_STYLE =
-  "mb-3 md:grid md:grid-cols-[110px_1fr] flex items-center md:gap-1 gap-2 flex-col md:text-start text-center";
+const LI_STYLE = "mb-3 md:grid md:grid-cols-[110px_1fr] flex md:gap-1 gap-2 flex-col md:text-start text-center";
 const H6_STYLE = "text-[#838383] font-bold md:mr-5 whitespace-nowrap";
 
 function ContentItem({ content, index }: { content: IProjectItem; index: number }) {
