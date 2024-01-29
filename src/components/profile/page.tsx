@@ -5,11 +5,8 @@ import SubTitle from "@/components/common/SubTitle";
 import Skills from "@/components/profile/Skills";
 import { RefObject, useEffect, useRef, useState } from "react";
 
-const WINDOW_lg = 1048;
-
 function Profile() {
   const [currentY, setCurrentY] = useState(0);
-  const [isWindowSizeLarge, setIsWindowSizeLarge] = useState(true);
   const [innerHeightOffset, setInnerHeightOffset] = useState(0);
   const subTitleRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
@@ -21,10 +18,8 @@ function Profile() {
 
   useEffect(() => {
     setInnerHeightOffset(window.innerHeight - 130);
-    setIsWindowSizeLarge(window.innerWidth > WINDOW_lg);
 
     window.addEventListener("resize", () => {
-      setIsWindowSizeLarge(window.innerWidth > WINDOW_lg);
       setInnerHeightOffset(window.innerHeight - 130);
     });
 
@@ -39,6 +34,10 @@ function Profile() {
 
   const setAnimation = (ref: RefObject<HTMLDivElement>) => {
     const LocationTop = (ref.current?.offsetTop as number) - innerHeightOffset;
+    if (ref.current?.classList.contains("gap-2")) {
+      console.log(LocationTop, innerHeightOffset, currentY);
+    }
+
     return LocationTop < currentY;
   };
 
