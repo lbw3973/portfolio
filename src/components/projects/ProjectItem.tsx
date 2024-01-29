@@ -113,7 +113,9 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
             </li>
             <li className={LI_STYLE}>
               <h6 className={H6_STYLE}>프로젝트 소개</h6>
-              <p className="text-sm break-keep sm:text-base text-[#242424] font-semibold">{content.introduction}</p>
+              <p className="text-sm break-keep sm:text-base text-[#242424] font-semibold leading-tight">
+                {content.introduction}
+              </p>
             </li>
             <li className={LI_STYLE}>
               <h6 className={H6_STYLE}>상세 역할</h6>
