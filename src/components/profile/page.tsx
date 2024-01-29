@@ -1,15 +1,58 @@
+"use client";
 import data from "@/constants/user.json";
 import Image from "next/image";
 import SubTitle from "@/components/common/SubTitle";
 import Skills from "@/components/profile/Skills";
+import { RefObject, useEffect, useRef, useState } from "react";
+
+const WINDOW_lg = 1048;
 
 function Profile() {
+  const [currentY, setCurrentY] = useState(0);
+  const [isWindowSizeLarge, setIsWindowSizeLarge] = useState(true);
+  const [innerHeightOffset, setInnerHeightOffset] = useState(0);
+  const subTitleRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const skillsRef = useRef<HTMLDivElement>(null);
+
+  const onScroll = () => {
+    setCurrentY(window.scrollY);
+  };
+
+  useEffect(() => {
+    setInnerHeightOffset(window.innerHeight - 130);
+    setIsWindowSizeLarge(window.innerWidth > WINDOW_lg);
+
+    window.addEventListener("resize", () => {
+      setIsWindowSizeLarge(window.innerWidth > WINDOW_lg);
+      setInnerHeightOffset(window.innerHeight - 130);
+    });
+
+    if (window.scrollY > 0) {
+      setCurrentY(window.scrollY);
+    }
+    window.addEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
+  const setAnimation = (ref: RefObject<HTMLDivElement>) => {
+    const LocationTop = (ref.current?.offsetTop as number) - innerHeightOffset;
+    return LocationTop < currentY;
+  };
+
   return (
     <section className="lg:py-28 md:py-21 py-14 lg:min-w-[1000px] px-4" id="Profile">
       <SubTitle text="Profile" />
-      <div className="p-4 border-white rounded-md md:p-6 lg:p-10 border-1 font-NanumSquareNeo">
-        <div className="flex flex-col gap-10 mb-16 lg:flex-row justify-evenly">
-          <div className="flex flex-col justify-around gap-2 text-center lg:text-start lg:gap-0">
+      <div className="p-4 overflow-hidden border-white rounded-md md:p-6 lg:p-10 border-1 font-NanumSquareNeo">
+        <div className="flex flex-col gap-10 mb-16 overflow-hidden lg:flex-row justify-evenly">
+          <div
+            ref={subTitleRef}
+            className={`flex flex-col justify-around gap-2 text-center lg:text-start lg:gap-0 ${
+              setAnimation(subTitleRef) ? "opacity-100" : "-translate-x-1/2 opacity-10"
+            } duration-1000`}
+          >
             <div className="text-xl font-bold leading-relaxed lg:text-5xl md:text-4xl sm:text-3xl break-keep">
               {data.title.map(item => (
                 <p key={item}>{item}</p>
@@ -30,7 +73,12 @@ function Profile() {
               ))}
             </div>
           </div>
-          <div className="h-full text-center lg:text-start">
+          <div
+            ref={imageRef}
+            className={`h-full text-center lg:text-start ${
+              setAnimation(imageRef) ? "opacity-100" : "translate-x-1/2 opacity-10"
+            } duration-1000`}
+          >
             <Image
               src={data.profileImage}
               alt="profileImage"
@@ -52,7 +100,12 @@ function Profile() {
             </div>
           </div>
         </div>
-        <Skills />
+        <div
+          ref={skillsRef}
+          className={`${setAnimation(skillsRef) ? "opacity-100" : "translate-y-1/2 opacity-10"} duration-1000`}
+        >
+          <Skills />
+        </div>
       </div>
     </section>
   );

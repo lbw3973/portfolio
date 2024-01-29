@@ -21,7 +21,7 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
   useEffect(() => {
     setPosition(
       document.getElementById("Work")!.getBoundingClientRect().top +
-        index * (window.innerWidth < 1048 ? 760 : 430) +
+        index * (window.innerWidth < 1048 ? 730 : 430) +
         window.scrollY -
         200,
     );
@@ -52,8 +52,8 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
 
   return (
     <div
-      className={`lg:h-[400px] mb-20 bg-work-Content  border-1 border-white shadow-content rounded-md sm:p-12 p-6 flex flex-col lg:gap-10 gap-3 transition-project lg:flex-row ${
-        getIsRendered() ? "opacity-100 w-full" : "translate-x-1/2 w-0 opacity-0"
+      className={`lg:h-[400px] mb-20 w-full bg-work-Content  border-1 border-white shadow-content rounded-md sm:p-12 p-6 flex flex-col lg:gap-10 gap-3 transition-project lg:flex-row ${
+        getIsRendered() ? "opacity-100" : index % 2 ? "translate-x-2/3 opacity-0" : "-translate-x-2/3 opacity-0"
       } duration-1000 font-NanumSquareNeo`}
     >
       <div

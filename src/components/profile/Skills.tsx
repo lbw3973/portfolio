@@ -4,9 +4,9 @@ import SkillIcons from "@/constants/skillIcon.json";
 
 function Skills() {
   return (
-    <div className="flex flex-col justify-center gap-10 md:flex-row md:items-center md:justify-normal">
+    <div className="flex flex-col justify-center gap-10 lg:flex-row lg:items-center">
       <h3 className="text-xl font-bold text-center sm:text-2xl">Skills</h3>
-      <div className="flex flex-wrap justify-center gap-8 sm:justify-normal">
+      <div className="flex flex-wrap justify-center gap-8">
         {Object.values(SkillIcons).map(item => (
           <Image
             src={item.src}
