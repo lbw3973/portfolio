@@ -145,10 +145,10 @@
       "프로젝트의 구조 설계 및 UI/UX 디자인",
       "Discord API를 사용하여 Login 구현",
       "Discord API를 사용하여 사용자 정보 및 보유채널 선택 모달을 구현",
-      "서버와의 통신을 위한 Axios Intance 구현 및 기타 API 구현"
+      "백엔드 서버와의 통신을 위한 Axios Intance 구현 및 기타 API 구현"
     ],
     "github": "https://github.com/lbw3973/DISEARCH-FRONT-END",
-    "thumbnail": "",
+    "thumbnail": "/assets/images/DISEARCH.gif",
     "deploy": "https://disearch.vercel.app/"
   }
 }
