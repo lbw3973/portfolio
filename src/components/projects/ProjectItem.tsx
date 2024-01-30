@@ -11,6 +11,7 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
   const [isHovered, setIsHovered] = useState(false);
   const [currentY, setCurrentY] = useState(0);
   const [outerHeightOffset, setOuterHeightOffset] = useState(0);
+  const [isRendered, setIsRendered] = useState(false);
   const itemRef = useRef<HTMLDivElement>(null);
 
   const onScroll = () => {
@@ -35,7 +36,10 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
 
   const setAnimation = (ref: RefObject<HTMLDivElement>) => {
     const LocationTop = (ref.current?.offsetTop as number) - outerHeightOffset;
-    return LocationTop < currentY;
+    if (!isRendered && LocationTop < currentY) {
+      setIsRendered(true);
+    }
+    return isRendered;
   };
 
   const mouseOverHandler = () => {
