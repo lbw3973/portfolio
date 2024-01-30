@@ -17,10 +17,10 @@ function Profile() {
   };
 
   useEffect(() => {
-    setOuterHeightOffset(window.outerHeight - 130);
+    setOuterHeightOffset(window.innerWidth > 1048 ? window.innerHeight - 130 : window.outerHeight - 130);
 
     window.addEventListener("resize", () => {
-      setOuterHeightOffset(window.outerHeight - 130);
+      setOuterHeightOffset(window.innerWidth > 1048 ? window.innerHeight - 130 : window.outerHeight - 130);
     });
 
     if (window.scrollY > 0) {
