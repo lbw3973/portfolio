@@ -137,18 +137,19 @@
   },
   "9": {
     "name": "DISEARCH",
-    "period": "24.01.18 ~ 진행 중",
+    "period": "24.01.18 ~ 24.02.15",
     "workForce": "FE 2인, BE 1인",
     "languages": ["TypeScript", "React", "TailwindCSS"],
     "introduction": "Discord 이용자들에게 만남의 장을 제공하는 웹사이트",
     "parts": [
       "프로젝트의 구조 설계 및 UI/UX 디자인",
+      "백엔드 서버와의 통신을 위한 Axios Intance 구현 및 기타 API 구현",
       "Discord API를 사용하여 Login 구현",
       "Discord API를 사용하여 사용자 정보 및 보유채널 선택 모달을 구현",
-      "백엔드 서버와의 통신을 위한 Axios Intance 구현 및 기타 API 구현"
+      "Discord API를 사용하여 Bot 생성 및 채널 참가코드 생성 구현"
     ],
     "github": "https://github.com/lbw3973/DISEARCH-FRONT-END",
-    "thumbnail": "/assets/images/DISEARCH.gif",
+    "thumbnail": "/assets/images/DisearchHomePage.gif",
     "deploy": "https://disearch.vercel.app/"
   }
 }
