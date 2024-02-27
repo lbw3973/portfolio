@@ -53,7 +53,7 @@ function ContentItem({ content, index }: { content: IProjectItem; index: number 
   return (
     <div
       ref={itemRef}
-      className={`mb-20 w-full bg-work-Content  border-1 border-white shadow-content rounded-md sm:pt-12 px-6 flex flex-col lg:gap-10 gap-3 transition-project lg:flex-row ${
+      className={`mb-20 w-full bg-work-Content  border-1 border-white shadow-content rounded-md sm:pt-12 lg:pb-6 px-6 flex flex-col lg:gap-10 gap-3 transition-project lg:flex-row ${
         setAnimation(itemRef) ? "opacity-100" : index % 2 ? "translate-x-2/3 opacity-0" : "-translate-x-2/3 opacity-0"
       } duration-1000 font-NanumSquareNeo`}
     >
